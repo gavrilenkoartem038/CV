@@ -4,6 +4,7 @@ const nav = document.querySelector('.header-nav');
 function toggleNav() {
   nav.classList.toggle('open');
   burger.classList.toggle('open');
+  document.body.classList.toggle('lock');
 }
 
 function closeNav(e) {

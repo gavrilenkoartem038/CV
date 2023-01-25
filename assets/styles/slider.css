@@ -1,0 +1,121 @@
+div {
+  margin: 0;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  overflow: hidden;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+input {
+  display: none;
+}
+
+.code-container {
+  display: flex;
+  align-items: center;
+  width: 300%;
+  transition: all 0.5s;
+}
+
+.code-example {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  align-self: center;
+}
+
+label {
+  display: block;
+  background-color: #ddd;
+  opacity: 0.5;
+  width: 2rem;
+  height: 0.5rem;
+  border: 0.5rem solid rgb(71, 71, 71);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+label:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+label:active {
+  background-color: green;
+}
+
+label:checked {
+  background-color: #fdd;
+}
+
+.controls-natations-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notations {
+  height: 2em;
+  overflow: hidden;
+}
+
+.notations-overflow {
+  height: 300%;
+  transition: all 0.5s;
+  font: 1.5em/2rem 'Arial', sans-serif;
+  color: rgb(218, 218, 218);
+}
+
+#switch1:checked ~ .code-container{
+margin-left: 0;
+}
+#switch2:checked ~ .code-container{
+margin-left: -100%;
+}
+#switch3:checked ~ .code-container{
+margin-left: -200%;
+}
+
+#switch1:checked ~ .controls-natations-container .notations-overflow{
+margin-top: 0;
+}
+
+#switch2:checked ~ .controls-natations-container .notations-overflow{
+margin-top: -2rem;
+}
+#switch3:checked ~ .controls-natations-container .notations-overflow{
+margin-top: -4rem;
+}
+
+#switch1:checked ~ .controls-natations-container label:nth-child(1),
+#switch2:checked ~ .controls-natations-container label:nth-child(2),
+#switch3:checked ~ .controls-natations-container label:nth-child(3) {
+  background-color: rgb(67, 180, 255);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .controls-natations-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+  }
+
+  .notations {
+      order: 1;
+  }
+  
+  .notations-overflow {
+      font: 1.3em/2rem 'Arial', sans-serif;
+  }
+}

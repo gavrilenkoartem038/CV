@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -16,11 +17,11 @@
       <nav class="header-nav">
         <ul class="nav-list">
           <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
-          <li class="nav-item"><a href="#self-information" class="nav-link">About myself</a></li>
+          <li class="nav-item"><a href="#about-myself" class="nav-link">About myself</a></li>
           <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
           <li class="nav-item"><a href="#code" class="nav-link">Code example</a></li>
           <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
           <li class="nav-item"><a href="#english" class="nav-link">English level</a></li>
         </ul>
       </nav>
@@ -31,6 +32,160 @@
       </div>
       <div class="dark"></div>
     </header>
+    <main class="main">
+      <section class="section profile">
+        <div class="profile-photo"></div>
+        <div class="profile-title">
+          <div class="main-title">HAURYLENKA ARTSEMI</div>
+          <div class="main-subtitle">front-end developer</div>
+        </div>
+        <ul class="contacts">
+          <li class="contacts-item phone">
+            <a href="tel:+375299062754" target="_blank">
+              <img src="./assets/icons/phone.png" alt="phone">
+              <span>Phone: </span>
+              <span>+375 (29) 906-27-54</span>
+            </a>
+          </li>
+          <li class="contacts-item mail">
+            <a href="mailto:gavrilenkoartem038@gmail.com" target="_blank">
+              <img src="./assets/icons/email.png" alt="email">
+              <span>E-mail: </span>
+              <span>gavrilenkoartem038@gmail.com</span>
+            </a>
+          </li>
+          <li class="contacts-item telegram">
+            <a href="http://t.me/artemHau" target="_blank">
+              <img src="./assets/icons/telegram.png" alt="telegram">
+              <span>Telegram: </span>
+              <span>artemHau</span>
+            </a>
+          </li>
+          <li class="contacts-item github">
+            <a href="https://github.com/gavrilenkoartem038" target="_blank">
+              <img src="./assets/icons/github.png" alt="github">
+              <span>Gihub: </span>
+              <span>gavrilenkoartem038</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <div class="main-content">
+        <section class="section about" id="about-myself">
+          <h4 class="section-title">About myself</h4>
+          <div class="about-info">I was working as a civil engineer for 3 years. About 1
+            year ago I decided to change my profession. I
+            started courses at RSschool and successfully
+            graduated from it. I don't have any experience on
+            the real projects, but at RSschool we studied at
+            some projects in the team. Now I'm looking for
+            some opportunities to improve my skills and
+            become front-end developer.</div>
+        </section>
+        <section class="section skills" id="skills">
+          <div class="section-title">Skills</div>
+          <ul class="skills-list">
+            <li class="skills-item">HTML</li>
+            <li class="skills-item">CSS</li>
+            <li class="skills-item">SCSS</li>
+            <li class="skills-item">JavaScript</li>
+            <li class="skills-item">TypeScript</li>
+            <li class="skills-item">Git</li>
+            <li class="skills-item">React</li>
+            <li class="skills-item">Redux</li>
+            <li class="skills-item">Material UI</li>
+          </ul>
+        </section>
+        <section class="section education" id="education">
+          <h4 class="section-title">Education</h4>
+          <ul class="education-list">
+            <li>
+              <div class="education-title">Belarussian National Technical University</div>
+              <div class="education-subtitle">Civil engineer</div>
+              <div class="education-dates">09/2014 - 06/2019</div>
+            </li>
+            <li>
+              <div class="education-title">RSschool</div>
+              <div class="education-subtitle">JS course, React course</div>
+              <div class="education-dates">01/2022 - 12/2022</div>
+            </li>
+          </ul>
+        </section>
+        <section class="section code" id="code">
+          <h4 class="section-title">Code example</h4>
+          <div class="slider-container">
+            <input type="radio" name="slider" id="switch1" checked>
+            <input type="radio" name="slider" id="switch2">
+            <input type="radio" name="slider" id="switch3">
+            <div class="code-container">
+              <div class="code-example"><code><pre>
+function cache(func) {
+  const cache = {}
+  return function(...args) {
+    const arg = JSON.stringify(args)
+    if(!(arg in cache)) {
+      const result = func(...args)
+      cache[arg] = result
+    }
+    return cache[arg]
+  }
+}
+                </pre></code>
+              </div>
+              <div class="code-example">
+                <code><pre>
+function getCount(str) {
+  let vowelsCount = 0;
+  const vowStr = 'aeiou'
+  str.split('').forEach(vow => {
+    if(vowStr.includes(vow)) vowelsCount++
+  })
+  return vowelsCount;
+}
+                  </pre></code>
+              </div>
+              <div class="code-example">
+                <code><pre>
+Array.prototype.map = function(func) {
+  let newArr = []
+    for (let elem of this) {
+      newArr.push(func(elem))
+    }
+    return newArr
+  }
+                  </pre></code>
+              </div>
+            </div>
+            <div class="controls-natations-container">
+              <div class="notations">
+                <div class="notations-overflow">
+                  <div class="phrase">Function Cache</div>
+                  <div class="phrase">Vowel Count</div>
+                  <div class="phrase">Array Mappings</div>
+                </div>
+              </div>
+              <div class="controls">
+                <label for="switch1"></label>
+                <label for="switch2"></label>
+                <label for="switch3"></label>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section projects" id="projects">
+          <h4 class="section-title">Projects</h4>
+          <ul>
+            <li>
+              <span>All my projects you can see on here</span>
+            </li>
+          </ul>
+        </section>
+        <section class="section english" id="projects">
+          <h4 class="section-title">English level</h4>
+          <div>I have A2/B1 english level</div>
+        </section>
+      </div>
+    </main>
   </div>
   <script src="index.js"></script>
 </body>
