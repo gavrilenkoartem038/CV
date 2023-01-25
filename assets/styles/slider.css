@@ -24,6 +24,7 @@ input {
   width: 33.33%;
   display: flex;
   justify-content: center;
+  line-height: 1.6rem;
 }
 
 .controls {
@@ -111,10 +112,17 @@ label:checked {
   }
 
   .code-example {
-    font-size: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
   }
 
   .notations {
     order: 1;
+  }
+}
+
+@media(max-width: 480px) {
+  .phrase {
+    line-height: 2rem;
   }
 }

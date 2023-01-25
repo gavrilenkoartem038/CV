@@ -23,10 +23,17 @@
   box-sizing: border-box;
   font-family: inherit;
   color: inherit;
+  scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: var(--color-brown);
+  transition: 0.5s;
 }
 
 ul,
@@ -54,6 +61,7 @@ body.lock {
 
 .header {
   height: 110px;
+  align-items: center;
 }
 
 .header-nav, .footer-container {
@@ -159,7 +167,7 @@ body.lock {
   flex-direction: column;
   padding: 0 var(--padding-1);
   width: 100%;
-  height: 80rem;
+  height: 70rem;
 }
 
 .main-content .section {
@@ -167,6 +175,13 @@ body.lock {
   align-items: center;
   gap: 1em;
   width: 50%;
+}
+
+.main-content .section:nth-child(2n) {
+  order: 1;
+}
+.main-content .section:last-child {
+  order: 1;
 }
 
 .section-title {
@@ -210,7 +225,9 @@ body.lock {
 
 .sertificates-list li, .projects-list li {
   display: flex;
+  align-items: center;
   gap: var(--padding-1);
+  padding-bottom: 0.5rem;
 }
 
 .certificate-title, .project-title {
@@ -222,6 +239,7 @@ body.lock {
   display: block;
   width: 1.6rem;
   height: 1.6rem;
+  min-width: 1.6rem;
   background-image: url(./assets/icons/github.svg);
   background-size: contain;
   transition: all 0.5s ease;
@@ -265,6 +283,10 @@ body.lock {
     width: calc(100% - 2rem);
     top: 14rem;
     left: 1rem;
+  }
+
+  .main-content {
+    height: 80rem;
   }
 }
 
@@ -325,6 +347,7 @@ body.lock {
 
   .main-content .section {
     width: auto;
+    order: 0 !important;
   }
 
 }
@@ -336,11 +359,24 @@ body.lock {
 }
 
 @media(max-width: 480px) {
+  :root {
+    --title-font: 1.6rem/2.4rem 'Nunito', sans-serif;
+    --basic-font: 1rem/1.6rem 'Nunito', sans-serif;
+  }
+
   .nav-list {
-    padding-left: 70px;
-    padding-top: 70px;
-    font-size: 24px;
+    padding-left: 3em;
+    padding-top: 5em;
+    font-size: 1.6em;
     line-height: 48px;
     gap: 16px;
+  }
+
+  .profile-photo::after {
+    top: 12rem;
+  }
+
+  .sertificates-list li, .projects-list li {
+    justify-content: space-between;
   }
 }
