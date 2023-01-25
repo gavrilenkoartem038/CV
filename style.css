@@ -7,12 +7,13 @@
   --header-color: #026670;
   --color-black: black;
   --color-light: #DEF2F1;
-  --color-brown: #c78f29;
+  --color-brown: #df9815;
   --padding-2: 2em;
   --padding-1: 1em;
   --padding-05: 0.5em;
   --title-font: 2rem/3rem 'Nunito', sans-serif;
   --basic-font: 1.2rem/2rem 'Nunito', sans-serif;
+  --small-font: 1rem/1.6rem 'Nunito', sans-serif;
 }
 
 * {
@@ -44,14 +45,18 @@ body.lock {
   background-color: var(--main-color);
 }
 
-.header {
+.header, .footer {
   display: flex;
   padding: var(--padding-2);
   background-color: var(--header-color);
   color: #DEF2F1;
 }
 
-.header-nav {
+.header {
+  height: 110px;
+}
+
+.header-nav, .footer-container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -85,6 +90,8 @@ body.lock {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 .section {
@@ -106,10 +113,15 @@ body.lock {
 .profile-photo {
   width: 10em;
   height: 10em;
-  border: 0.2rem solid var(--header-color);
+  border: 0.5rem solid var(--header-color);
   outline: 0.5rem solid var(--main-color);
-  background-color: #c78f29;
   border-radius: 5em;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
 }
 
 .profile-photo::after,
@@ -118,13 +130,17 @@ body.lock {
   position: absolute;
   left: 5rem;
   width: calc(100% - 6rem);
-  height: 0.8rem;
+  height: 0.6rem;
   background-color: var(--dark-color);
   z-index: -1;
 }
 
 .profile-photo::after {
-  top: 12rem;
+  top: 12.5rem;
+}
+
+.profile-photo::before {
+  top: 1rem;
 }
 
 .main-title {
@@ -155,9 +171,10 @@ body.lock {
 
 .section-title {
   font: var(--title-font);
-  padding: 0 var(--padding-2);
+  padding: 0 var(--padding-1);
   border-bottom: 2px solid var(--dark-color);
   color: var(--dark-color);
+  text-align: center;
 }
 
 .skills-list {
@@ -175,6 +192,61 @@ body.lock {
   opacity: 0.8;
 }
 
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-05);
+}
+
+.education-title {
+  font-weight: bold;
+}
+
+.education-dates {
+  font: var(--small-font);
+  font-style: italic;
+  color: var(--color-brown);
+}
+
+.sertificates-list li, .projects-list li {
+  display: flex;
+  gap: var(--padding-1);
+}
+
+.certificate-title, .project-title {
+  font-weight: bold;
+  color: var(--color-brown);
+}
+
+.svg-link {
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(./assets/icons/github.svg);
+  background-size: contain;
+  transition: all 0.5s ease;
+}
+
+.svg-link:hover{
+  filter: brightness(0) saturate(100%) invert(55%) sepia(64%) saturate(487%) hue-rotate(0deg) brightness(93%) contrast(93%);
+}
+
+.js-icon {
+  background-image: url(./assets/icons/js.svg);
+}
+
+.react-icon {
+  background-image: url(./assets/icons/react.svg);
+}
+
+.certificate-icon {
+  background-image: url(./assets/icons/certificate.svg);
+}
+
+.footer-container {
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 1080px) {
   .profile {
     justify-content: space-evenly;
@@ -190,8 +262,9 @@ body.lock {
     content: none;
   }
   .profile-photo::after {
+    width: calc(100% - 2rem);
     top: 14rem;
-    left: 3rem;
+    left: 1rem;
   }
 }
 

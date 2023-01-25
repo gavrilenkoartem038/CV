@@ -5,10 +5,8 @@ div {
 .slider-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   overflow: hidden;
-  gap: 2rem;
-  padding: 2rem 0;
 }
 
 input {
@@ -31,6 +29,7 @@ input {
 .controls {
   display: flex;
   align-self: center;
+  gap: var(--padding-05);
 }
 
 label {
@@ -38,8 +37,8 @@ label {
   background-color: #ddd;
   opacity: 0.5;
   width: 2rem;
-  height: 0.5rem;
-  border: 0.5rem solid rgb(71, 71, 71);
+  height: 1rem;
+  border: 0.2rem solid var(--dark-color);
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.5s;
@@ -50,17 +49,13 @@ label:hover {
   transform: scale(1.1);
 }
 
-label:active {
-  background-color: green;
-}
-
 label:checked {
   background-color: #fdd;
 }
 
 .controls-natations-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -72,50 +67,54 @@ label:checked {
 .notations-overflow {
   height: 300%;
   transition: all 0.5s;
-  font: 1.5em/2rem 'Arial', sans-serif;
-  color: rgb(218, 218, 218);
+  font: var(--basic-font);
+  color: var(--color-brown);
+  font-weight: bold
 }
 
-#switch1:checked ~ .code-container{
-margin-left: 0;
-}
-#switch2:checked ~ .code-container{
-margin-left: -100%;
-}
-#switch3:checked ~ .code-container{
-margin-left: -200%;
+#switch1:checked~.code-container {
+  margin-left: 0;
 }
 
-#switch1:checked ~ .controls-natations-container .notations-overflow{
-margin-top: 0;
+#switch2:checked~.code-container {
+  margin-left: -100%;
 }
 
-#switch2:checked ~ .controls-natations-container .notations-overflow{
-margin-top: -2rem;
-}
-#switch3:checked ~ .controls-natations-container .notations-overflow{
-margin-top: -4rem;
+#switch3:checked~.code-container {
+  margin-left: -200%;
 }
 
-#switch1:checked ~ .controls-natations-container label:nth-child(1),
-#switch2:checked ~ .controls-natations-container label:nth-child(2),
-#switch3:checked ~ .controls-natations-container label:nth-child(3) {
-  background-color: rgb(67, 180, 255);
+#switch1:checked~.controls-natations-container .notations-overflow {
+  margin-top: 0;
+}
+
+#switch2:checked~.controls-natations-container .notations-overflow {
+  margin-top: -2rem;
+}
+
+#switch3:checked~.controls-natations-container .notations-overflow {
+  margin-top: -4rem;
+}
+
+#switch1:checked~.controls-natations-container label:nth-child(1),
+#switch2:checked~.controls-natations-container label:nth-child(2),
+#switch3:checked~.controls-natations-container label:nth-child(3) {
+  background-color: var(--color-brown);
   opacity: 1;
 }
 
 @media (max-width: 768px) {
   .controls-natations-container {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .code-example {
+    font-size: 0.8em;
   }
 
   .notations {
-      order: 1;
-  }
-  
-  .notations-overflow {
-      font: 1.3em/2rem 'Arial', sans-serif;
+    order: 1;
   }
 }
